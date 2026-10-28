@@ -1,0 +1,22 @@
+{
+  "name": "testautomationpractice",
+  "version": "1.0.0",
+  "description": "Cucumber + Playwright test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --config cucumber.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.10.2",
+    "allure": "^3.21.0",
+    "allure-cucumberjs": "^3.13.0",
+    "dotenv": "^16.6.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
