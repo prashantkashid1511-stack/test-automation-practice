@@ -40,13 +40,18 @@ pipeline {
             }
         }
 
+        stage('Clean Old Allure Results') {
+            steps {
+                bat 'if exist allure-results rmdir /s /q allure-results'
+            }
+        }
+
         stage('Run Automation Tests') {
             steps {
                 bat 'npm test -- --format summary'
             }
         }
-
-    } // End of stages
+    }
 
     post {
         always {
@@ -55,5 +60,4 @@ pipeline {
                    results: [[path: 'allure-results']]
         }
     }
-
-} // End of pipeline
+}
