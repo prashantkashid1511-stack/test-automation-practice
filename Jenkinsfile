@@ -28,6 +28,15 @@ pipeline {
                bat 'npx playwright install chromium'
            }
         } 
+        
+        stage('Check Feature Files') {
+    steps {
+        bat 'dir src\\features'
+        bat 'dir src\\step-definitions'
+    }
+}
+
+
 
         stage('Run Automation Tests') {
            steps {
