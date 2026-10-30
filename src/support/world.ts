@@ -34,8 +34,8 @@ Before({ timeout: 50000 }, async function (this: CustomWorld) {
 
   if (browserName === "chromium") {
     this.browser = await chromium.launch({
-      headless: false,
-      slowMo: 1000
+      headless: true
+
     });
   } else if (browserName === "firefox") {
     this.browser = await firefox.launch({
