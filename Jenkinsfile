@@ -40,13 +40,20 @@ pipeline {
     }
 }
 
-
-
         stage('Run Automation Tests') {
            steps {
           bat 'npm test -- --format summary'
           }
         }
+
+    post {
+        always {
+            allure includeProperties: false,
+                   jdk: '',
+                   results: [[path: 'allure-results']]
+        }
+    }
+
 
     }
 }
