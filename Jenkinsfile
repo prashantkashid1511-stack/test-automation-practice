@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    environment {
+        BASE_URL = 'https://testautomationpractice.blogspot.com/'
+    }
+
     stages {
 
         stage('Checkout') {
