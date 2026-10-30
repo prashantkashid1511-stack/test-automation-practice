@@ -40,7 +40,7 @@ pipeline {
 
         stage('Run Automation Tests') {
            steps {
-          bat 'npm test'
+          bat 'npm test -- --format summary'
           }
         }
 
