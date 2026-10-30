@@ -48,16 +48,28 @@ pipeline {
 
         stage('Run Automation Tests') {
             steps {
-                bat 'npm test -- --format summary'
+                bat 'npm test'
+            }
+        }
+
+        stage('Verify Allure Results') {
+            steps {
+                bat 'dir allure-results'
             }
         }
     }
 
     post {
         always {
-            allure includeProperties: false,
-                   jdk: '',
-                   results: [[path: 'allure-results']]
+            script {
+                if (fileExists('allure-results')) {
+                    allure includeProperties: false,
+                           jdk: '',
+                           results: [[path: 'allure-results']]
+                } else {
+                    echo 'Allure results folder not found. Skipping report generation.'
+                }
+            }
         }
     }
 }
