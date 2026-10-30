@@ -29,22 +29,24 @@ pipeline {
 
         stage('Install Playwright Browser') {
             steps {
-               bat 'npx playwright install chromium'
-           }
-        } 
-        
+                bat 'npx playwright install chromium'
+            }
+        }
+
         stage('Check Feature Files') {
-    steps {
-        bat 'dir src\\features'
-        bat 'dir src\\step-definitions'
-    }
-}
+            steps {
+                bat 'dir src\\features'
+                bat 'dir src\\step-definitions'
+            }
+        }
 
         stage('Run Automation Tests') {
-           steps {
-          bat 'npm test -- --format summary'
-          }
+            steps {
+                bat 'npm test -- --format summary'
+            }
         }
+
+    } // End of stages
 
     post {
         always {
@@ -54,6 +56,4 @@ pipeline {
         }
     }
 
-
-    }
-}
+} // End of pipeline
