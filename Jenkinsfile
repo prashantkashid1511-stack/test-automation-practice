@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,31 +6,14 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Getting code from GitHub'
+                echo 'Code downloaded from GitHub'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Check Node and npm') {
             steps {
-                echo 'Installing npm dependencies'
-            }
-        }
-
-        stage('Install Playwright') {
-            steps {
-                echo 'Installing Playwright browsers'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                echo 'Executing Cucumber tests'
-            }
-        }
-
-        stage('Allure Report') {
-            steps {
-                echo 'Generating Allure report'
+                bat 'node --version'
+                bat 'npm --version'
             }
         }
     }
