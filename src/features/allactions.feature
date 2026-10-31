@@ -1,4 +1,3 @@
-
 @allactions
 Feature: all actions
 
@@ -8,7 +7,7 @@ Feature: all actions
     When I type name into filed as "Prashant kashid"
     When I type email as "prashant@gmail.com"
     When I type phone number as "1234567890"
-    When  I type address as "pune"
+    When I type address as "pune"
     When I select gender as a gender
     When I select days as a day
     Then I will handle the alert as well
