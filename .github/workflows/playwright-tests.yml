@@ -1,4 +1,3 @@
-
 name: Playwright Automation
 
 on:
@@ -31,3 +30,14 @@ jobs:
         env:
           BASE_URL: https://testautomationpractice.blogspot.com/
         run: npm test
+
+      - name: Upload Test Evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-evidence
+          path: |
+            screenshots/
+            videos/
+            reports/
+          if-no-files-found: ignore
