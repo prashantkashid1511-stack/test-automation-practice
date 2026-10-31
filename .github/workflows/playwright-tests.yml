@@ -28,4 +28,6 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Execute Automation Tests
+        env:
+          BASE_URL: https://testautomationpractice.blogspot.com/
         run: npm test
