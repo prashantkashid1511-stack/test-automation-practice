@@ -5,7 +5,7 @@ import {
   setWorldConstructor,
   World,
   setDefaultTimeout,
-  Status
+  Status 
 } from "@cucumber/cucumber";
 
 import {
@@ -14,7 +14,7 @@ import {
   Page,
   chromium,
   firefox,
-  webkit
+  webkit 
 } from "@playwright/test";
 
 import "dotenv/config";
@@ -66,6 +66,8 @@ Before({ timeout: 50000 }, async function (this: CustomWorld) {
 After(async function (this: CustomWorld, { result, pickle }) {
 
   const failed = result?.status === Status.FAILED;
+  console.log("FAILED SCENARIO:", pickle.name);
+    console.log("FAILURE DETAILS:", result?.message);
 
   // Create a safe, scenario-specific filename
   const scenarioName = pickle.name.replace(
