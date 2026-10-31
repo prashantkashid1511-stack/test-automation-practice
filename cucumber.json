@@ -12,6 +12,7 @@
     ],
     "format": [
       "progress",
+       "summary",
       ["html", "reports/cucumber-report.html"],
       "allure-cucumberjs/reporter"
     ]
