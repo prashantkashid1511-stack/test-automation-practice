@@ -11,5 +11,4 @@ Feature: all actions
     When  I type address as "pune"
     When I select gender as a gender
     When I select days as a day
-    When I will upload the file 
     Then I will handle the alert as well

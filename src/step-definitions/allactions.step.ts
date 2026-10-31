@@ -43,13 +43,6 @@ When('I select days as a day', async function (this:CustomWorld,) {
     await expect(this.page.locator("#sunday")).toBeChecked();
 });
 
-When('I will upload the file', async function (this:CustomWorld,) {
-  
-    await allactions.uploadfilemetod("E:/playwright notess/student.json");
-
-    //await expect(this.page.locator("#singleFileInput")).toContainText("student.json");
-
-});
 
 When('I will handle the alert as well', async function (this:CustomWorld) {
    
